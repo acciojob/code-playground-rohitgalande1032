@@ -13,12 +13,12 @@ const App = () => {
 
   return (
     <BrowserRouter>
-    <div>
-        <p>{login ? "Logged in, Now you can enter Playground" : "You are not anthenticated, Please login first"}</p>
+    <div id="main-container">
+        <p>{login ? "Logged in, Now you can enter Playground" : "You are not authenticated, Please login first"}</p>
         <nav>
           <ul>
             <li><Link to="/play-ground">PlayGround</Link></li>
-            <li><Link to="/">Login</Link></li>
+            <li><Link to="/">Log In</Link></li>
           </ul>
         </nav>
         <Routes>
@@ -28,7 +28,7 @@ const App = () => {
             element={<PrivateRoute login={login} />}
           />
         </Routes>
-        <button onClick={handleClick}>{login ? "Logout" : "Login"}</button>
+        <button onClick={handleClick}>{login ? "Log Out" : "Log In"}</button>
     </div>
     </BrowserRouter>
   )
